@@ -5,6 +5,7 @@
 @inject ProfileService ProfileService
 @implements IDisposable
 
+<div class="container">
 @if (GameEngine.CurrentQuestion is null || GameEngine.CurrentSession is null || GameEngine.CurrentSession.IsComplete)
 {
     <p class="text-muted">No active game. <a href="/">Return to title.</a></p>
@@ -57,11 +58,11 @@ else
             }
         </div>
 
-        <div class="button-bar" style="margin-top:1rem;">
-            <button class="secondary-button" @onclick="UseSkip" disabled="@_answered">
-                <img class="icon" src="@AssetCatalog.GetAssetPath("5050.png")" alt="Skip" /> 50-50
+        <div class="action-buttons">
+            <button class="action-button" @onclick="UseSkip" disabled="@_answered">
+                <img src="@AssetCatalog.GetAssetPath("5050.png")" alt="50-50" />
             </button>
-            <button class="image-button" @onclick="Next" disabled="@(!_answered)">
+            <button class="action-button" @onclick="Next" disabled="@(!_answered)">
                 <img src="@AssetCatalog.GetAssetPath(_isLastQuestion ? "end-trivia-button.png" : "next button.png")" alt="Next" />
             </button>
         </div>
@@ -72,6 +73,7 @@ else
         </div>
     </div>
 }
+</div>
 
 @code {
     private bool _answered;
