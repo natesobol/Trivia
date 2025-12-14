@@ -35,7 +35,7 @@
                         <div>
                             <div class="category-title">@category.Display</div>
                             <button type="button" class="checkbox-button" @onclick="() => ToggleCategory(category.Key)">
-                                <img src="@GetCheckboxImage(SettingsService.Current.CategoriesSelected.Contains(category.Key))" alt="Category toggle" />
+                                <img class="checkbox-icon" src="@GetCheckboxImage(SettingsService.Current.CategoriesSelected.Contains(category.Key))" alt="Category toggle" />
                                 <span>@(SettingsService.Current.CategoriesSelected.Contains(category.Key) ? "Selected" : "Tap to select")</span>
                             </button>
                         </div>
@@ -156,10 +156,9 @@
 
     private string GetCheckboxImage(bool selected)
     {
-        var darkMode = SettingsService.Current.DarkTheme;
         return selected
-            ? AssetCatalog.GetAssetPath(darkMode ? "checked-white.png" : "check.png")
-            : AssetCatalog.GetAssetPath(darkMode ? "unchecked-white.png" : "unchecked.png");
+            ? AssetCatalog.GetAssetPath("checked-white.png")
+            : AssetCatalog.GetAssetPath("unchecked-white.png");
     }
 
     private async Task Save()

@@ -300,6 +300,13 @@ input, select, textarea {
     padding: 0.25rem 0.35rem;
 }
 
+.checkbox-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+}
+
 .subcategory-list {
     display: flex;
     flex-direction: column;
