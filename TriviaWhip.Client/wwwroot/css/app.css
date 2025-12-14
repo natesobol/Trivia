@@ -518,18 +518,60 @@
     background: var(--color-bg-card);
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
+    gap: var(--spacing-sm);
 }
 
-.category-header {
-    display: flex;
+.category-panel {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+    transition: border-color 0.18s ease, box-shadow 0.2s ease, transform 0.18s ease;
+}
+
+.category-panel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+.category-panel .category-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--border-radius-lg);
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08), transparent 60%);
+    padding: 6px;
+}
+
+.category-panel .category-icon.mail-icon {
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.14), 0 0 18px rgba(255, 255, 255, 0.6);
+}
+
+.category-panel .category-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     gap: var(--spacing-sm);
     align-items: center;
-    justify-content: space-between;
 }
 
-.category-title {
-    font-weight: 700;
+.category-panel .category-title {
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.category-panel .category-toggle {
+    justify-content: flex-end;
+}
+
+.category-panel .checkbox-button span {
+    font-size: 0.9rem;
+}
+
+.category-panel.is-selected {
+    border-color: var(--color-accent-green);
+    box-shadow: 0 18px 44px rgba(126, 231, 135, 0.25);
+    background: linear-gradient(180deg, rgba(126, 231, 135, 0.06), rgba(12, 17, 23, 0.7));
+}
+
+.category-panel.is-selected .category-title {
+    color: var(--color-accent-green);
 }
 
 .checkbox-button {
@@ -544,10 +586,10 @@
 }
 
 .checkbox-icon {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
     object-fit: contain;
-    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.35));
 }
 
 .subcategory-list {
@@ -558,9 +600,29 @@
 
 .subcategory-row {
     display: grid;
-    grid-template-columns: 30px 20px 1fr;
-    gap: var(--spacing-xs);
+    grid-template-columns: 40px 1fr auto;
+    gap: var(--spacing-sm);
     align-items: center;
+    padding: 6px 10px;
+    border-radius: var(--border-radius-md);
+}
+
+.subcategory-row.is-selected {
+    background: rgba(126, 231, 135, 0.08);
+}
+
+.subcategory-row .subcategory-name {
+    transition: color 0.15s ease;
+}
+
+.subcategory-row.is-selected .subcategory-name {
+    color: var(--color-accent-green);
+}
+
+.subcategory-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
 }
 
 .tag-row {
