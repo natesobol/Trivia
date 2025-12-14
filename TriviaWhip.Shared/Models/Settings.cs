@@ -17,4 +17,13 @@ public class Settings
     public HashSet<string> CategoriesSelected { get; set; } = new();
     public HashSet<string> SubCategoriesSelected { get; set; } = new();
     public string LastEmailAddress { get; set; } = string.Empty;
+
+    // Persist profile-owned assets and tutorial flags alongside settings to align with Supabase storage.
+    public HashSet<int> OwnedAvatars { get; set; } = new() { 0 };
+    public HashSet<int> OwnedSchemes { get; set; } = new() { 0 };
+    public HashSet<int> OwnedBuffs { get; set; } = new();
+    public bool HasSeenLivesTutorial { get; set; }
+    public bool HasSeenQuestionMarkTutorial { get; set; }
+    public bool HasSeenCategoryTutorial { get; set; }
+    public int IncorrectCount { get; set; }
 }
