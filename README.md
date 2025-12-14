@@ -44,7 +44,7 @@ This repository currently holds the original B4i assets and exported question da
 3. Build Razor components for each page, wiring them to services and LocalStorage persistence.
 4. Add tutorial modals and toast notifications for achievements/purchases/errors.
 5. Implement optional backend endpoints for feedback email and leaderboards.
-6. Style the app with consistent scheme colors/avatars and add audio assets; replace iOS-specific visuals with web-friendly equivalents.
+6. Style the app with consistent scheme colors/avatars and add audio assets; replace iOS-specific visuals with web-friendly equivalents. A unified stylesheet now drives both the Blazor components and the static HTML shell so they share the same compact theme.
 7. Test gameplay flows (timed/practice), purchases, achievements, and persistence across sessions.
 
 ## Unsupported iOS-Specific Features

@@ -3,56 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <title>Trivia Whip Status</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-    }
-    .card {
-      background: #ffffff;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      padding: 24px 28px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      text-align: center;
-      max-width: 420px;
-    }
-    h1 {
-      margin-top: 0;
-      color: #222222;
-    }
-    p {
-      color: #444444;
-      margin: 12px 0 20px;
-      line-height: 1.5;
-    }
-    .button {
-      display: inline-block;
-      padding: 12px 18px;
-      background: #2563eb;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: background 0.2s ease-in-out;
-    }
-    .button:hover,
-    .button:focus {
-      background: #1d4ed8;
-    }
-  </style>
+  <link rel="stylesheet" href="./TriviaWhip.Client/wwwroot/css/html-unified.css">
 </head>
 <body>
-  <div class="card">
-    <h1>Trivia Whip is Running</h1>
-    <p>This page confirms the site is up. Use the button below to open the full app.</p>
-    <a class="button" href="./TriviaWhip.Client/wwwroot/index.html">Go to the App</a>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <div>
+        <h1>Trivia Whip</h1>
+        <small>Unified web styles</small>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="primary" href="./TriviaWhip.Client/wwwroot/index.html">Open the App</a>
+        <a href="README.md">Project README</a>
+        <a href="https://github.com/" target="_blank" rel="noreferrer">Repository Host</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <div class="status-card">
+        <h1>Trivia Whip is Running</h1>
+        <p>This page confirms the static host is up and serving the unified styles used across the HTML shell and Blazor app.</p>
+        <div class="status-meta">
+          <div class="meta-tile">
+            <div class="meta-label">Environment</div>
+            <div class="meta-value">Web Assembly + Static HTML</div>
+          </div>
+          <div class="meta-tile">
+            <div class="meta-label">Theme</div>
+            <div class="meta-value">Pleasant Compact (Unified)</div>
+          </div>
+          <div class="meta-tile">
+            <div class="meta-label">Status</div>
+            <div class="meta-value">Online</div>
+          </div>
+        </div>
+        <div class="status-actions">
+          <a class="btn btn-primary" href="./TriviaWhip.Client/wwwroot/index.html">Launch Trivia Whip</a>
+          <a class="btn btn-secondary" href="README.md">Read project notes</a>
+        </div>
+      </div>
+    </main>
   </div>
 </body>
 </html>

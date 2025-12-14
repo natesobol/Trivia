@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="refresh" content="0; url=/" />
+    <link rel="stylesheet" href="css/html-unified.css">
     <script>
         const redirectTarget = window.location.pathname + window.location.search + window.location.hash;
         sessionStorage.setItem('triviawhip-redirect', redirectTarget);
@@ -12,6 +13,23 @@
     <title>Redirecting...</title>
 </head>
 <body>
-    <p>Redirecting to the Trivia Whip app...</p>
+    <div class="page-shell">
+        <aside class="sidebar">
+            <div>
+                <h1>Trivia Whip</h1>
+                <small>Redirecting</small>
+            </div>
+            <nav class="sidebar-nav">
+                <a class="primary" href="/">Return home</a>
+                <a href="/TriviaWhip.Client/wwwroot/index.html">Launch app</a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <div class="status-card">
+                <h1>Redirecting to the Trivia Whip app...</h1>
+                <p>You should be taken to the main experience momentarily.</p>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
