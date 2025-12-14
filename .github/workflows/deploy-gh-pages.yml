@@ -17,14 +17,23 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
+
+      - name: Install WebAssembly tools
+        run: dotnet workload install wasm-tools
 
       - name: Restore
         run: dotnet restore TriviaWhip.Client/TriviaWhip.Client.csproj
@@ -38,6 +47,7 @@ jobs:
           path: publish/wwwroot
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
         with:
           artifact_name: github-pages
