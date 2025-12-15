@@ -34,7 +34,7 @@ else
                 </div>
             </div>
             <button class="play-button" @onclick="StartGame">
-                <img src="@AssetCatalog.GetAssetPath("play-button.png")" alt="Play" />
+                <img src='@AssetCatalog.GetAssetPath("play-button.png")' alt="Play" />
             </button>
         </div>
     </div>
@@ -44,7 +44,7 @@ else
             <div class="stat-card">
                 <strong>Coins</strong>
                 <div class="stat-row">
-                    <img class="icon" src="@AssetCatalog.GetAssetPath("coinico.png")" alt="Coins" />
+                    <img class="icon" src='@AssetCatalog.GetAssetPath("coinico.png")' alt="Coins" />
                     <span>@ProfileService.Current.Coins</span>
                 </div>
             </div>
@@ -53,7 +53,7 @@ else
             <div class="progress-bar" title="Progress to next milestone">
                 <span style="width:@ProgressPercent%"></span>
             </div>
-            <p class="text-muted">@ProfileService.Current.CorrectCount <img class="inline-icon" src="@AssetCatalog.GetAssetPath("slash.png")" alt="/" /> @NextMilestone</p>
+            <p class="text-muted">@ProfileService.Current.CorrectCount <img class="inline-icon" src='@AssetCatalog.GetAssetPath("slash.png")' alt="/" /> @NextMilestone</p>
         </div>
         <div class="stat-card">
             <strong>Timer Mode</strong>
@@ -66,15 +66,15 @@ else
 
     <div class="button-bar" style="margin-top:1rem;">
         <button class="secondary-button" @onclick="@(() => Nav.NavigateTo("/categories"))">
-            <img class="icon" src="@AssetCatalog.GetAssetPath("categoryview.png")" alt="Categories" />
+            <img class="icon" src='@AssetCatalog.GetAssetPath("categoryview.png")' alt="Categories" />
             Categories
         </button>
         <button class="secondary-button" @onclick="@(() => Nav.NavigateTo("/store"))">
-            <img class="icon" src="@AssetCatalog.GetAssetPath("store.png")" alt="Store" />
+            <img class="icon" src='@AssetCatalog.GetAssetPath("store.png")' alt="Store" />
             Store
         </button>
         <button class="secondary-button" @onclick="@(() => Nav.NavigateTo("/settings"))">
-            <img class="icon" src="@AssetCatalog.GetAssetPath("settings.png")" alt="Settings" />
+            <img class="icon" src='@AssetCatalog.GetAssetPath("settings.png")' alt="Settings" />
             Settings
         </button>
     </div>
@@ -96,20 +96,22 @@ else
         <div class="stat-card">
             <strong>Question Count</strong>
             <div class="stat-row">
-                <img class="icon" src="@AssetCatalog.GetAssetPath("levellabel.png")" alt="Question count" />
+                <img class="icon" src='@AssetCatalog.GetAssetPath("levellabel.png")' alt="Question count" />
                 <span>@SettingsService.Current.QuestionCount</span>
             </div>
         </div>
         <div class="stat-card">
             <strong>Achievements</strong>
             <div class="stat-row">
-                <img class="icon" src="@AssetCatalog.GetAssetPath("trophy.png")" alt="Achievements" />
+                <img class="icon" src='@AssetCatalog.GetAssetPath("trophy.png")' alt="Achievements" />
                 <span>@ProfileService.Current.BestStreak.ToString("N0") best streak</span>
             </div>
         </div>
     </div>
 </div>
 </div>
+
+}
 
 @code {
     private bool _initialized;
