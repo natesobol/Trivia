@@ -36,10 +36,10 @@ jobs:
         run: dotnet workload install wasm-tools
 
       - name: Restore
-        run: dotnet restore TriviaWhip.Client/TriviaWhip.Client.csproj
+        run: dotnet restore trivia_app/TriviaWhip.Client/TriviaWhip.Client.csproj
 
       - name: Publish
-        run: dotnet publish TriviaWhip.Client/TriviaWhip.Client.csproj -c Release -o publish
+        run: dotnet publish trivia_app/TriviaWhip.Client/TriviaWhip.Client.csproj -c Release -o publish
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

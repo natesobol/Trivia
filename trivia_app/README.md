@@ -60,12 +60,12 @@ Remove or replace iOS-only integrations such as AppTrackingTransparency, Game Ce
 1. Install the .NET 8 SDK locally.
 2. Restore and build from the repository root. The server project now references the client, so a server build or publish will bundle the Blazor assets automatically:
    ```bash
-   dotnet build TriviaWhip.Server/TriviaWhip.Server.csproj
-   dotnet build TriviaWhip.Client/TriviaWhip.Client.csproj
+   dotnet build trivia_app/TriviaWhip.Server/TriviaWhip.Server.csproj
+   dotnet build trivia_app/TriviaWhip.Client/TriviaWhip.Client.csproj
    ```
 3. Run the hosted backend (which also serves the client assets):
    ```bash
-   dotnet run --project TriviaWhip.Server/TriviaWhip.Server.csproj
+   dotnet run --project trivia_app/TriviaWhip.Server/TriviaWhip.Server.csproj
    ```
 4. Navigate to the served URL (default `https://localhost:5001`) to play Trivia Whip in the browser.
 
